@@ -35,6 +35,8 @@ section {
   padding: 10rem 9% 2rem;
 }
 
+/* styles for the header section */
+
 .header {
   position: fixed;
   top: 0;
@@ -76,6 +78,8 @@ section {
   color: var(--text-color);
   display: none;
 }
+
+/* styles for the home section */
 
 .home {
   display: flex;
@@ -161,6 +165,8 @@ span {
   box-shadow: none;
 }
 
+/* styles for the about section */
+
 .about {
   display: flex;
   justify-content: center;
@@ -192,6 +198,8 @@ span {
   margin: 2rem;
 }
 
+/* styles for the work section */
+
 .work {
   background: var(--bg-color-odd);
 }
@@ -202,7 +210,7 @@ span {
 
 .work-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(221px, 1fr));
   align-items: center;
   gap: 3.5rem;
 }
@@ -213,12 +221,27 @@ span {
   box-shadow: 0 0 1rem var(--bg-color-odd);
   overflow: hidden;
   display: flex;
+  background-color: var(--bg-color-even);
+}
+
+.image-wrapper {
+  position: relative;
+  width: 100%;
+  padding-top: 100%; /* Maintain a square aspect ratio */
 }
 
 .work-box img {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
-  display: block;
+  height: 100%;
+  /* display: block; */
+  object-fit: cover; /* Add this line */
+  object-position: center; /* Add this line */
   transition: .5s ease;
+  /* border-radius: 50%;
+  overflow: hidden; */
 }
 
 .work-box:hover img {
@@ -270,6 +293,31 @@ span {
   color: var(--bg-color-even);
 }
 
+/* styles for the image pop-up in work section */
+
+.popup {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 9999;
+}
+
+.popup img {
+  display: block;
+  max-width: 80%;
+  max-height: 80%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* styles for the contact section */
+
 .contact {
   background: var(--bg-color-even);
 }
@@ -314,6 +362,8 @@ span {
   margin-top: 2rem;
   cursor: pointer;
 }
+
+/* styles for the footer section */
 
 .footer {
   display: flex;
