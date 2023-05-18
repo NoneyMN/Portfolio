@@ -68,53 +68,70 @@
       <h2 class="heading">Some of My <span>Works</span></h2>
       <div class="work-container">
         <div class="work-box">
-          <img src="images/work1.png" alt="">
+          <div class="image-wrapper">
+            <img src="images/work1.png" alt="">
+          </div>
           <div class="work-layer">
             <h4>Graphic Design #1</h4>
             <p>Group theme logo for February 2019 JF Glow Program</p>
-            <a href="#"><i class='bx bx-link-external'></i></a>
+            <a href="#work"><i class='bx bx-link-external'></i></a>
           </div>
         </div>
         <div class="work-box">
-          <img src="images/work2.png" alt="">
+          <div class="image-wrapper">
+            <img src="images/work2.png" alt="">
+          </div>
           <div class="work-layer">
             <h4>Graphic Design #2</h4>
             <p>Group theme logo for March 2019 JF Glow Program</p>
-            <a href="#"><i class='bx bx-link-external'></i></a>
+            <a href="#work"><i class='bx bx-link-external'></i></a>
           </div>
         </div>
         <div class="work-box">
-          <img src="images/work3.png" alt="">
+          <div class="image-wrapper">
+            <img src="images/work3.png" alt="">
+          </div>
           <div class="work-layer">
             <h4>Graphic Design #3</h4>
             <p>Group theme logo for April 2019 JF Glow Program</p>
-            <a href="#"><i class='bx bx-link-external'></i></a>
+            <a href="#work"><i class='bx bx-link-external'></i></a>
           </div>
         </div>
         <div class="work-box">
-          <img src="images/work4.png" alt="">
+          <div class="image-wrapper">
+            <img src="images/work4.png" alt="">
+          </div>
           <div class="work-layer">
             <h4>Graphic Design #4</h4>
             <p>Group theme logo for May 2019 Ramadhan JF Glow Program</p>
-            <a href="#"><i class='bx bx-link-external'></i></a>
+            <a href="#work"><i class='bx bx-link-external'></i></a>
           </div>
         </div>
         <div class="work-box">
-          <img src="images/work5.png" alt="">
+          <div class="image-wrapper">
+            <img src="images/work5.png" alt="">
+          </div>
           <div class="work-layer">
             <h4>Graphic Design #5</h4>
             <p>Group theme logo for August 2019 JF Glow Program</p>
-            <a href="#"><i class='bx bx-link-external'></i></a>
+            <a href="#work"><i class='bx bx-link-external'></i></a>
           </div>
         </div>
         <div class="work-box">
-          <img src="images/work6.png" alt="">
+          <div class="image-wrapper">
+            <img src="images/work6.png" alt="">
+          </div>
           <div class="work-layer">
             <h4>Graphic Design #6</h4>
             <p>Detox Infographic for Promo Email</p>
-            <a href="#"><i class='bx bx-link-external'></i></a>
+            <a href="#work"><i class='bx bx-link-external'></i></a>
           </div>
         </div>
+      </div>
+
+      <!-- image popup for work section -->
+      <div class="popup">
+        <img src="" alt="Large Image" />
       </div>
     </section>
 
@@ -156,6 +173,27 @@
     <script src="script.js"></script>
 
     <script>
+      // popup container for image in work section
+      const workBoxes = document.querySelectorAll('.work-box');
+      const popup = document.querySelector('.popup');
+      const popupImage = popup.querySelector('img');
+
+      workBoxes.forEach((box) => {
+        const link = box.querySelector('.bx-link-external');
+        const image = box.querySelector('img');
+
+        link.addEventListener('click', (e) => {
+          e.preventDefault();
+          popupImage.src = image.src;
+          popup.style.display = 'flex';
+        });
+      });
+
+      popup.addEventListener('click', () => {
+        popup.style.display = 'none';
+      });
+
+      // form submission to google sheet
       const scriptURL = 'https://script.google.com/macros/s/AKfycbzR3rVf8ZiDP_ZHGPkab65CpKiFzFlvtTxw9A4lRKGmCo0NEaujeBXXT_4BPzS2jFz_/exec'
       const form = document.forms['submit-to-google-sheet']
       const msg = document.getElementById("msg")
