@@ -92,6 +92,17 @@ section {
   animation: floatImage 4s ease-in-out infinite;
 }
 
+.image-credit {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  font-size: 0.8rem;
+  margin-top: 0.5rem;
+  color: gray;
+}
+
 @keyframes floatImage {
   0% {
     transform: translateY(0);
@@ -175,8 +186,11 @@ span {
   background: var(--bg-color-even);
 }
 
+
+
 .about-img img {
   width: 35vw;
+  transform: scaleX(-1);
 }
 
 .heading {
