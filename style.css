@@ -103,6 +103,10 @@ section {
   color: gray;
 }
 
+.image-credit a {
+  color: inherit;
+}
+
 @keyframes floatImage {
   0% {
     transform: translateY(0);
@@ -209,7 +213,7 @@ span {
 
 .about-content p {
   font-size: 1.6rem;
-  margin: 2rem;
+  margin: 2rem 0;
 }
 
 /* styles for the work section */
@@ -222,14 +226,24 @@ span {
   margin-bottom: 4rem;
 }
 
-.work-container {
+.work h3 {
+  font-size: 2.6rem;
+  margin: 4rem 0 1.5rem 0;
+}
+
+.work p {
+  font-size: 1.6rem;
+  margin-bottom: 2rem;
+}
+
+.work-graphic-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(221px, 1fr));
   align-items: center;
   gap: 3.5rem;
 }
 
-.work-container .work-box {
+.work-graphic-grid .work-box {
   position: relative;
   border-radius: 2rem;
   box-shadow: 0 0 1rem var(--bg-color-odd);
@@ -497,13 +511,13 @@ span {
     margin-bottom: 3rem;
   }
 
-  .work-container {
+  .work-graphic-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
 @media (max-width: 617px) {
-  .work-container {
+  .work-graphic-grid {
     grid-template-columns: 1fr;
   }
 }
